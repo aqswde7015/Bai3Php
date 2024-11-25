@@ -3,48 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Data</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: 20px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            text-align: left;
-            padding: 8px;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-    </style>
+    <title>Danh sách sinh viên</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Student Data</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Ma sinh vien</th>
-                <th>Password</th>
-                <th>Ho </th>
-                <th>Ten</th>
-                <th>City</th>
-                <th>Email</th>
-                <th>Course</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="container mt-5">
+        <h1 class="text-center">Danh sách sinh viên</h1>
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Ma sinh vien</th>
+                    <th>Password</th>
+                    <th>Ho</th>
+                    <th>Ten</th>
+                    <th>City</th>
+                    <th>Email</th>
+                    <th>Course</th>
+
+                </tr>
+            </thead>
+            <tbody>
             <?php 
                 include "data.php";
                 $rs = getdata();
@@ -61,7 +40,10 @@
             </tr>
             <?php endforeach; ?>
             
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

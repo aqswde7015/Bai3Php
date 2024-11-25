@@ -47,8 +47,9 @@
     }
     function getdata(){
 
-        $csv = fopen('student_data.csv','r');
+        $csv = fopen('KTPM2.csv','r');
         $students = [];
+        $header = fgetcsv($csv);
         while(($rs = fgetcsv($csv)) !==false ){
            
             $student = new SV();
